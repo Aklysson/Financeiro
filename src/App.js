@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { GlobalStyle } from "./global"
+import  Grid  from "./components/Grid";
 
 export default function App() {
 
@@ -43,11 +44,20 @@ export default function App() {
     localStorage.setItem('transactions', JSON.stringify(newArrayTransactions));
   }
 
+  const Dados = () => {
+    return data
+  }
+
   return (
     <>
       <Header />
       <Dashboard income={income} expense={expense} total={total} />
-      <Form handleAdd={handleAdd}/>
+      <Form
+        handleAdd={handleAdd}
+        transactionsList={transactionsList}
+        setTransactionsList={setTransactionsList}
+      />
+      <Grid Dados={Dados}/>
       <GlobalStyle />
     </>
   );

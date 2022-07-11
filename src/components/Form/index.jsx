@@ -1,7 +1,8 @@
 import { useState } from "react";
+import Grid from "../Grid";
 import { Button, Container, Input, InputContent, RadioGroup } from './style';
 
-export function Form({handleAdd}) {
+export function Form({handleAdd, transactionsList, setTransactionsList }) {
     const [desc, setDesc] = useState("");
     const [amount, setAmount] = useState("");
     const [isExpense, setExpense] = useState(false)
@@ -35,6 +36,7 @@ export function Form({handleAdd}) {
 
 
     return (
+        <>
         <Container>
             <InputContent>
                 Descrição
@@ -71,5 +73,7 @@ export function Form({handleAdd}) {
             </RadioGroup>
             <Button onClick={handleSave}>Adicionar</Button>
         </Container>
+              <Grid itens={transactionsList} setItens={setTransactionsList} />
+</>
     )
 }
