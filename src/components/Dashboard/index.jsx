@@ -1,22 +1,20 @@
 import { Container } from "./style";
 import { Summary } from "../Summary";
-import { Form } from "../Form";
 
-export function Dashboard(){
+export function Dashboard({income, expense, total}){
     return (
         <>
         <Container>
             <Summary 
             title="Entradas"
-            value="50,00"/>
+            value={income}/>
             <Summary 
             title="Saidas"
-            value="50,00"/>
+            value={expense}/>
             <Summary 
             title="Total"
-            value="50,00"/>
+            value={total}/>
         </Container>
-        <Form />
         </>
         
     )

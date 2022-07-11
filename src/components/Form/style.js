@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
  max-width: 1120px;
- padding: 2rem 0px; 
- margin: 2rem auto;
+ padding: 15px 0px; 
+ margin: 20px auto;
 
  background: white;
  box-shadow: 0px 0px 5px #ccc;
@@ -11,7 +11,12 @@ export const Container = styled.div`
  
  display: flex;
  justify-content: space-around;
- gap: 1rem;
+ align-items: center;
+ gap: 10px;
+
+ @media (max-width: 767px) {
+    display: grid;
+ }
 `
 
 export const InputContent = styled.div`
@@ -21,9 +26,7 @@ flex-direction: column;`
 export const Input = styled.div`
     outline: none;
     border-radius: 5px;
-    padding: 5px 10px;
     font-size: 15px;
-    border: 1px solid #ccc;
 `
 
 export const RadioGroup = styled.div`
@@ -32,6 +35,7 @@ align-items: center;
 
     input{
         margin-left: 20px;
+        margin-right: 5px;
         accent-color: black;
         margin-top: 0;
     }
