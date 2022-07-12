@@ -1,15 +1,19 @@
 import { Form } from "./components/Form";
-import { useEffect, useState } from "react";
+import { useEffect, useState   } from "react";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { GlobalStyle } from "./global"
 import  Grid  from "./components/Grid";
+import { TransactionContext } from "./Transactions";
+import { Oi } from "./components/Oi";
+
 
 export default function App() {
 
   const data = localStorage.getItem("transactions");
   const [transactionsList, setTransactionsList] =
     useState(data ? JSON.parse(data) : [])
+    console.log(transactionsList)
 
   const [income, setIncome] = useState(0)
   const [expense, setExpense] = useState(0)
@@ -44,12 +48,8 @@ export default function App() {
     localStorage.setItem('transactions', JSON.stringify(newArrayTransactions));
   }
 
-  const Dados = () => {
-    return data
-  }
-
   return (
-    <>
+    <TransactionContext.Provider value={transactionsList}>
       <Header />
       <Dashboard income={income} expense={expense} total={total} />
       <Form
@@ -57,9 +57,10 @@ export default function App() {
         transactionsList={transactionsList}
         setTransactionsList={setTransactionsList}
       />
-      <Grid Dados={Dados}/>
+      <Grid />
+      <Oi />
       <GlobalStyle />
-    </>
+    </TransactionContext.Provider>
   );
 }
 

@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TransactionContext } from "../../Transactions";
 import GridItem from "../GridItem";
 import * as C from "./styles";
 
-const Grid = ({ itens, setItens }) => {
-  const onDelete = (ID) => {
-    const newArray = itens.filter((transaction) => transaction.id !== ID);
-    setItens(newArray);
-    localStorage.setItem("transactions", JSON.stringify(newArray));
-  };
-
+const Grid = () => {
+ const itens = useContext(TransactionContext)
+console.log(itens)
   return (
     <C.Table>
       <C.Thead>
@@ -23,7 +20,7 @@ const Grid = ({ itens, setItens }) => {
       </C.Thead>
       <C.Tbody>
         {itens?.map((item, index) => (
-          <GridItem key={index} item={item} onDelete={onDelete} />
+          <GridItem key={index} item={item}  />
         ))}
       </C.Tbody>
     </C.Table>

@@ -2,7 +2,7 @@ import React from "react";
 import * as C from "./style";
 
 
-const GridItem = ({ item, onDelete }) => {
+const GridItem = ({ item}) => {
   return (
     <C.Tr>
       <C.Td>{item.desc}</C.Td>
