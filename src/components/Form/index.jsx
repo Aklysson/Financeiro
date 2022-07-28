@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Container, Input, InputContent, RadioGroup } from './style';
 
-export function Form({handleAdd }) {
+export function Form() {
     const [description, setDescription] = useState("");
     const [amount, setAmount] = useState("");
     const [isExpense, setExpense] = useState(false)
@@ -26,7 +26,8 @@ export function Form({handleAdd }) {
             
         }
 
-        handleAdd(transaction);
+
+        
 
         setDescription("")
         setAmount("")

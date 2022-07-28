@@ -12,7 +12,7 @@ createServer({
     return [
           { id: 1,
             description: 'Compras',
-            amount: 100,
+            amount: 300,
             expense: true, },
           { id: 2,
             description: 'Salário',

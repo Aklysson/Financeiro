@@ -7,7 +7,7 @@ export function Summary(props){
             <p>{props.title}</p>
             <img src={props.img} alt="img" />
             </div>
-            <p id="money"> {props.value}</p>
+            <p id="money">R$ {props.value}</p>
         </Container>
     )
 }

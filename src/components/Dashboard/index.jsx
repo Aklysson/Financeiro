@@ -11,20 +11,20 @@ const income = transactions
 .filter((item) => !item.expense)
 .map((transactions) => Number(transactions.amount))
 
-const incomes = income.reduce((acc, cur) => acc + cur,0).toFixed(2)
+let incomes = income.reduce((acc, cur) => acc + cur,0).toFixed(2)
 
 
 const outcome = transactions
 .filter((item) => item.expense)
 .map((transactions) => Number(transactions.amount))
 
-const expenses = outcome.reduce((acc, cur) => acc + cur,0).toFixed(2)
+let expenses = outcome.reduce((acc, cur) => acc + cur,0).toFixed(2)
 
 
-let total = incomes - expenses
-if(total < 0) {
-    total = 0
-}
+
+let total = Number(incomes - expenses).toFixed(2)
+
+
 
 
 return (
