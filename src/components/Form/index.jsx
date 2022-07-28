@@ -1,15 +1,14 @@
 import { useState } from "react";
-import Grid from "../Grid";
 import { Button, Container, Input, InputContent, RadioGroup } from './style';
 
-export function Form({handleAdd, transactionsList, setTransactionsList }) {
-    const [desc, setDesc] = useState("");
+export function Form({handleAdd }) {
+    const [description, setDescription] = useState("");
     const [amount, setAmount] = useState("");
     const [isExpense, setExpense] = useState(false)
 
 
     const handleSave = () => {
-        if(!desc || !amount ) {
+        if(!description || !amount ) {
             alert("Please insert a valid description and amount");
             return;
         } else if(amount < 1) {
@@ -21,7 +20,7 @@ export function Form({handleAdd, transactionsList, setTransactionsList }) {
 
         const transaction = {
             id: generateID(),
-            desc: desc,
+            description: description,
             amount: amount,
             expense: isExpense,
             
@@ -29,7 +28,7 @@ export function Form({handleAdd, transactionsList, setTransactionsList }) {
 
         handleAdd(transaction);
 
-        setDesc("")
+        setDescription("")
         setAmount("")
     }
 
@@ -41,8 +40,8 @@ export function Form({handleAdd, transactionsList, setTransactionsList }) {
             <InputContent>
                 Descrição
                 <Input>
-                    <input value={desc}
-                        onChange={(e) => setDesc(e.target.value)} />
+                    <input value={description}
+                        onChange={(e) => setDescription(e.target.value)} />
                 </Input>
             </InputContent>
             <InputContent>

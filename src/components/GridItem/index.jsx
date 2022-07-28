@@ -5,10 +5,10 @@ import * as C from "./style";
 const GridItem = ({ item}) => {
   return (
     <C.Tr>
-      <C.Td>{item.desc}</C.Td>
+      <C.Td>{item.description}</C.Td>
       <C.Td>{item.amount}</C.Td>
       <C.Td alignCenter>
-        {item.expense}
+        {item.expense ? "Gastos" : "Entradas"}
       </C.Td>
       <C.Td alignCenter>
       </C.Td>

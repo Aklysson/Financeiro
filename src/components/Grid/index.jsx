@@ -5,8 +5,8 @@ import * as C from "./styles";
 
 const Grid = () => {
  const itens = useContext(TransactionContext)
-console.log(itens)
-  return (
+
+ return (
     <C.Table>
       <C.Thead>
         <C.Tr>
